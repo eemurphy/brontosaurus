@@ -9,7 +9,7 @@ import (
 	"github.com/getsentry/sentry-go"
 	"github.com/golang/glog"
 
-	"github.com/eemurphy/brontosaurus/cmd/trex/environments"
+	"github.com/eemurphy/brontosaurus/cmd/brontosaurus/environments"
 )
 
 type Server interface {

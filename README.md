@@ -3,7 +3,7 @@ TRex
 
  **TRex** is RH **T**AP's **R**est **Ex**ample
 
-![Trexxy](rhtap-trex_sm.png)
+![Trexxy](rhtap-brontosaurus_sm.png)
 
 
 TRex is a full-featured REST API that persists _dinosaurs_, making it a solid foundation from which developers can quickly bootstrap new services.
@@ -45,7 +45,7 @@ $ make binary
 $ make db/setup
 $ make db/login
 
-    root@f076ddf94520:/# psql -h localhost -U trex brontosaurus
+    root@f076ddf94520:/# psql -h localhost -U brontosaurus brontosaurus
     psql (14.4 (Debian 14.4-1.pgdg110+1))
     Type "help" for help.
 
@@ -61,12 +61,12 @@ The initial migration will create the base data model as well as providing a way
 ```shell
 
 # Run migrations
-./trex migrate
+./brontosaurus migrate
 
 # Verify they ran in the database
 $ make db/login
 
-root@f076ddf94520:/# psql -h localhost -U trex brontosaurus
+root@f076ddf94520:/# psql -h localhost -U brontosaurus brontosaurus
 psql (14.4 (Debian 14.4-1.pgdg110+1))
 Type "help" for help.
 
@@ -74,9 +74,9 @@ brontosaurus=# \dt
                  List of relations
  Schema |    Name    | Type  |        Owner
 --------+------------+-------+---------------------
- public | dinosaurs  | table | trex
- public | events     | table | trex
- public | migrations | table | trex
+ public | dinosaurs  | table | brontosaurus
+ public | events     | table | brontosaurus
+ public | migrations | table | brontosaurus
 (3 rows)
 
 
@@ -208,7 +208,7 @@ Login Succeeded!
 
 $ make deploy
 
-$ ocm login --token=${OCM_ACCESS_TOKEN} --url=https://trex.apps-crc.testing --insecure
+$ ocm login --token=${OCM_ACCESS_TOKEN} --url=https://brontosaurus.apps-crc.testing --insecure
 
 $ ocm post /api/brontosaurus/v1/dinosaurs << EOF
 {
@@ -230,9 +230,9 @@ Following manual changes are required to run the application successfully:
 - `pkg/api/presenters/kind.go` : Add case statement for the kind
 - `pkg/api/presenters/path.go` : Add case statement for the kind
 - `pkg/api/presenters/` : Add presenters file (if missing)
-- `cmd/trex/environments/service_types.go` : Add new service locator for the kind
-- `cmd/trex/environments/types.go` : Add service locator and use `cmd/trex/environments/framework.go` to instantiate
-- `cmd/trex/server/routes.go` : Add service routes (if missing)
+- `cmd/brontosaurus/environments/service_types.go` : Add new service locator for the kind
+- `cmd/brontosaurus/environments/types.go` : Add service locator and use `cmd/brontosaurus/environments/framework.go` to instantiate
+- `cmd/brontosaurus/server/routes.go` : Add service routes (if missing)
 - Add validation methods in handler if required
 - `pkg/db/migrations/migration_structs.go` : Add migration name
 - `test/factories.go` : Add helper functions

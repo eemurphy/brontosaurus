@@ -4,8 +4,8 @@ import (
 	"github.com/golang/glog"
 	"github.com/spf13/cobra"
 
-	"github.com/eemurphy/brontosaurus/cmd/trex/environments"
-	"github.com/eemurphy/brontosaurus/cmd/trex/server"
+	"github.com/eemurphy/brontosaurus/cmd/brontosaurus/environments"
+	"github.com/eemurphy/brontosaurus/cmd/brontosaurus/server"
 )
 
 func NewServeCommand() *cobra.Command {

@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/eemurphy/brontosaurus/cmd/trex/server"
+	"github.com/eemurphy/brontosaurus/cmd/brontosaurus/server"
 	"github.com/eemurphy/brontosaurus/pkg/api"
 	"github.com/eemurphy/brontosaurus/pkg/controllers"
 	"github.com/eemurphy/brontosaurus/pkg/dao"

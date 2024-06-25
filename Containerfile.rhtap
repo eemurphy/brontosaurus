@@ -18,20 +18,20 @@ RUN \
     microdnf clean all
 
 COPY --from=builder \
-    /brontosaurus/trex \
+    /brontosaurus/brontosaurus \
     /usr/local/bin/
 
 EXPOSE 8000
 
-ENTRYPOINT ["/usr/local/bin/trex", "serve"]
+ENTRYPOINT ["/usr/local/bin/brontosaurus", "serve"]
 
-LABEL name="trex" \
+LABEL name="brontosaurus" \
       vendor="Red Hat, Inc." \
       version="0.0.1" \
       summary="brontosaurus API" \
       description="brontosaurus API" \
       io.k8s.description="brontosaurus API" \
       io.k8s.display-name="brontosaurus" \
-      io.openshift.tags="trex"
+      io.openshift.tags="brontosaurus"
 
 #20231204

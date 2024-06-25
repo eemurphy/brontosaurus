@@ -16,7 +16,7 @@ import (
 	sdk "github.com/openshift-online/ocm-sdk-go"
 	"github.com/openshift-online/ocm-sdk-go/authentication"
 
-	"github.com/eemurphy/brontosaurus/cmd/trex/environments"
+	"github.com/eemurphy/brontosaurus/cmd/brontosaurus/environments"
 	"github.com/eemurphy/brontosaurus/data/generated/openapi"
 	"github.com/eemurphy/brontosaurus/pkg/errors"
 )

@@ -40,7 +40,7 @@ func SendAPI(w http.ResponseWriter, r *http.Request) {
 		},
 	}
 	body := Metadata{
-		ID:       "trex",
+		ID:       "brontosaurus",
 		Kind:     "API",
 		HREF:     r.URL.Path,
 		Versions: versions,

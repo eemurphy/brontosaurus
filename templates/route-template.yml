@@ -10,14 +10,14 @@ objects:
 - apiVersion: route.openshift.io/v1
   kind: Route
   metadata:
-    name: trex
+    name: brontosaurus
     labels:
-      app: trex
+      app: brontosaurus
   spec:
-    host: trex.apps-crc.testing
+    host: brontosaurus.apps-crc.testing
     to:
       kind: Service
-      name: trex
+      name: brontosaurus
     tls:
       termination: reencrypt
       insecureEdgeTerminationPolicy: Redirect

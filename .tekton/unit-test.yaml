@@ -102,11 +102,11 @@ spec:
             - name: PGDATA
               value: /work/data
             - name: POSTGRES_DB
-              value: rhtrex
+              value: brontosaurus-db
             - name: POSTGRES_PASSWORD
               value: foobar-bizz-buzz
             - name: POSTGRES_USER
-              value: trex
+              value: brontosaurus
             volumeMounts:
               - mountPath: /work
                 name: data

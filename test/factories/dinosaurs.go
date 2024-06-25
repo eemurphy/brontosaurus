@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/eemurphy/brontosaurus/cmd/trex/environments"
+	"github.com/eemurphy/brontosaurus/cmd/brontosaurus/environments"
 	"github.com/eemurphy/brontosaurus/pkg/api"
 )
 

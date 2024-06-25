@@ -30,7 +30,7 @@
 /coverage
 
 # Ignore built binaries
-/trex
+/brontosaurus
 
 # Ignore generated templates
 /templates/*-template.json

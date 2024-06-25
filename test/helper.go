@@ -24,8 +24,8 @@ import (
 
 	amv1 "github.com/openshift-online/ocm-sdk-go/accountsmgmt/v1"
 
-	"github.com/eemurphy/brontosaurus/cmd/trex/environments"
-	"github.com/eemurphy/brontosaurus/cmd/trex/server"
+	"github.com/eemurphy/brontosaurus/cmd/brontosaurus/environments"
+	"github.com/eemurphy/brontosaurus/cmd/brontosaurus/server"
 	"github.com/eemurphy/brontosaurus/pkg/api"
 	"github.com/eemurphy/brontosaurus/pkg/api/openapi"
 	"github.com/eemurphy/brontosaurus/pkg/config"

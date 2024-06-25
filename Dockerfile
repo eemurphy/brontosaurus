@@ -7,14 +7,14 @@ RUN \
     microdnf clean all
 
 COPY \
-    trex \
+    brontosaurus \
     /usr/local/bin/
 
 EXPOSE 8000
 
-ENTRYPOINT ["/usr/local/bin/trex", "serve"]
+ENTRYPOINT ["/usr/local/bin/brontosaurus", "serve"]
 
-LABEL name="trex" \
+LABEL name="brontosaurus" \
       vendor="Red Hat" \
       version="0.0.1" \
       summary="brontosaurus API" \

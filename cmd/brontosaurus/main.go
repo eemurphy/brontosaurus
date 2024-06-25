@@ -6,9 +6,9 @@ import (
 	"github.com/golang/glog"
 	"github.com/spf13/cobra"
 
-	"github.com/eemurphy/brontosaurus/cmd/trex/clone"
-	"github.com/eemurphy/brontosaurus/cmd/trex/migrate"
-	"github.com/eemurphy/brontosaurus/cmd/trex/servecmd"
+	"github.com/eemurphy/brontosaurus/cmd/brontosaurus/clone"
+	"github.com/eemurphy/brontosaurus/cmd/brontosaurus/migrate"
+	"github.com/eemurphy/brontosaurus/cmd/brontosaurus/servecmd"
 )
 
 // nolint
@@ -29,7 +29,7 @@ func main() {
 	}
 
 	rootCmd := &cobra.Command{
-		Use:  "trex",
+		Use:  "brontosaurus",
 		Long: "brontosaurus serves as a template for new microservices",
 	}
 

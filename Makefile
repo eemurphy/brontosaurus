@@ -41,10 +41,10 @@ internal_image_registry:=image-registry.openshift-image-registry.svc:5000
 image_repository:=$(namespace)/brontosaurus
 
 # Database connection details
-db_name:=rhtrex
-db_host=trex-db.$(namespace)
+db_name:=brontosaurus-db
+db_host=brontosaurus-db.$(namespace)
 db_port=5432
-db_user:=trex
+db_user:=brontosaurus
 db_password:=foobar-bizz-buzz
 db_password_file=${PWD}/secrets/db.password
 db_sslmode:=disable
@@ -146,12 +146,12 @@ lint:
 # Build binaries
 # NOTE it may be necessary to use CGO_ENABLED=0 for backwards compatibility with centos7 if not using centos7
 binary: check-gopath
-	${GO} build ./cmd/trex
+	${GO} build ./cmd/brontosaurus
 .PHONY: binary
 
 # Install
 install: check-gopath
-	CGO_ENABLED=$(CGO_ENABLED) GOEXPERIMENT=boringcrypto ${GO} install -ldflags="$(ldflags)" ./cmd/trex
+	CGO_ENABLED=$(CGO_ENABLED) GOEXPERIMENT=boringcrypto ${GO} install -ldflags="$(ldflags)" ./cmd/brontosaurus
 	@ ${GO} version | grep -q "$(GO_VERSION)" || \
 		( \
 			printf '\033[41m\033[97m\n'; \
@@ -231,14 +231,14 @@ generate:
 .PHONY: generate
 
 run: install
-	trex migrate
-	trex serve
+	brontosaurus migrate
+	brontosaurus serve
 .PHONY: run
 
 # Run Swagger and host the api docs
 run/docs:
 	@echo "Please open http://localhost/"
-	docker run -d -p 80:8080 -e SWAGGER_JSON=/trex.yaml -v $(PWD)/openapi/brontosaurus.yaml:/trex.yaml swaggerapi/swagger-ui
+	docker run -d -p 80:8080 -e SWAGGER_JSON=/brontosaurus.yaml -v $(PWD)/openapi/brontosaurus.yaml:/brontosaurus.yaml swaggerapi/swagger-ui
 .PHONY: run/docs
 
 # Delete temporary files
@@ -345,16 +345,16 @@ undeploy: \
 .PHONY: db/setup
 db/setup:
 	@echo $(db_password) > $(db_password_file)
-	$(container_tool) run --name psql-rhtrex -e POSTGRES_DB=$(db_name) -e POSTGRES_USER=$(db_user) -e POSTGRES_PASSWORD=$(db_password) -p $(db_port):5432 -d $(db_image)
+	$(container_tool) run --name psql-brontosaurus-db -e POSTGRES_DB=$(db_name) -e POSTGRES_USER=$(db_user) -e POSTGRES_PASSWORD=$(db_password) -p $(db_port):5432 -d $(db_image)
 
 .PHONY: db/login
 db/login:
-	$(container_tool) exec -it psql-rhtrex bash -c "psql -h localhost -U $(db_user) $(db_name)"
+	$(container_tool) exec -it psql-brontosaurus-db bash -c "psql -h localhost -U $(db_user) $(db_name)"
 
 .PHONY: db/teardown
 db/teardown:
-	$(container_tool) stop psql-rhtrex
-	$(container_tool) rm psql-rhtrex
+	$(container_tool) stop psql-brontosaurus-db
+	$(container_tool) rm psql-brontosaurus-db
 
 crc/login:
 	@echo "Logging into CRC"

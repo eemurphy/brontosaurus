@@ -2,7 +2,7 @@ package factories
 
 import (
 	"context"
-	"github.com/eemurphy/brontosaurus/cmd/trex/environments"
+	"github.com/eemurphy/brontosaurus/cmd/brontosaurus/environments"
 	"github.com/eemurphy/brontosaurus/pkg/api"
 )
 

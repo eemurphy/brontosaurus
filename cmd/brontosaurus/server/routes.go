@@ -6,7 +6,7 @@ import (
 	gorillahandlers "github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
 
-	"github.com/eemurphy/brontosaurus/cmd/trex/server/logging"
+	"github.com/eemurphy/brontosaurus/cmd/brontosaurus/server/logging"
 	"github.com/eemurphy/brontosaurus/pkg/api"
 	"github.com/eemurphy/brontosaurus/pkg/auth"
 	"github.com/eemurphy/brontosaurus/pkg/db"
