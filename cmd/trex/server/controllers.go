@@ -3,11 +3,11 @@ package server
 import (
 	"context"
 
-	"github.com/openshift-online/rh-trex/pkg/api"
-	"github.com/openshift-online/rh-trex/pkg/controllers"
-	"github.com/openshift-online/rh-trex/pkg/db"
+	"github.com/eemurphy/brontosaurus/pkg/api"
+	"github.com/eemurphy/brontosaurus/pkg/controllers"
+	"github.com/eemurphy/brontosaurus/pkg/db"
 
-	"github.com/openshift-online/rh-trex/pkg/logger"
+	"github.com/eemurphy/brontosaurus/pkg/logger"
 )
 
 func NewControllersServer() *ControllersServer {

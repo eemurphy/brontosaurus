@@ -4,16 +4,16 @@ import (
 	"context"
 	"testing"
 
-	"github.com/openshift-online/rh-trex/pkg/dao"
-	"github.com/openshift-online/rh-trex/pkg/db"
+	"github.com/eemurphy/brontosaurus/pkg/dao"
+	"github.com/eemurphy/brontosaurus/pkg/db"
 
 	"github.com/onsi/gomega/types"
 	"github.com/yaacov/tree-search-language/pkg/tsl"
 
-	"github.com/openshift-online/rh-trex/pkg/api"
-	"github.com/openshift-online/rh-trex/pkg/config"
-	"github.com/openshift-online/rh-trex/pkg/db/db_session"
-	"github.com/openshift-online/rh-trex/pkg/errors"
+	"github.com/eemurphy/brontosaurus/pkg/api"
+	"github.com/eemurphy/brontosaurus/pkg/config"
+	"github.com/eemurphy/brontosaurus/pkg/db/db_session"
+	"github.com/eemurphy/brontosaurus/pkg/errors"
 
 	. "github.com/onsi/gomega"
 )
@@ -33,11 +33,11 @@ func TestSQLTranslation(t *testing.T) {
 	tests := []map[string]interface{}{
 		{
 			"search": "garbage",
-			"error":  "rh-trex-21: Failed to parse search query: garbage",
+			"error":  "brontosaurus-21: Failed to parse search query: garbage",
 		},
 		{
 			"search": "id in ('123')",
-			"error":  "rh-trex-21: dinosaurs.id is not a valid field name",
+			"error":  "brontosaurus-21: dinosaurs.id is not a valid field name",
 		},
 	}
 	for _, test := range tests {

@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-// This file contains the API metadata types used by the rh-trex.
+// This file contains the API metadata types used by the brontosaurus.
 
 package api
 

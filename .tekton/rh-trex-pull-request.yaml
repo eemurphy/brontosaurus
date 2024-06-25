@@ -2,21 +2,21 @@ apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
 metadata:
   annotations:
-    build.appstudio.openshift.io/repo: https://github.com/openshift-online/rh-trex?rev={{revision}}
+    build.appstudio.openshift.io/repo: https://github.com/eemurphy/brontosaurus?rev={{revision}}
     build.appstudio.redhat.com/commit_sha: '{{revision}}'
     build.appstudio.redhat.com/pull_request_number: '{{pull_request_number}}'
     build.appstudio.redhat.com/target_branch: '{{target_branch}}'
     pipelinesascode.tekton.dev/max-keep-runs: "3"
     pipelinesascode.tekton.dev/on-cel-expression: event == "pull_request" && target_branch
-      == "main" && ( "./***".pathChanged() || ".tekton/rh-trex-pull-request.yaml".pathChanged()
+      == "main" && ( "./***".pathChanged() || ".tekton/brontosaurus-pull-request.yaml".pathChanged()
       || "Containerfile.rhtap".pathChanged() )
   creationTimestamp: null
   labels:
-    appstudio.openshift.io/application: rh-trex
-    appstudio.openshift.io/component: rh-trex
+    appstudio.openshift.io/application: brontosaurus
+    appstudio.openshift.io/component: brontosaurus
     pipelines.appstudio.openshift.io/type: build
-  name: rh-trex-on-pull-request
-  namespace: rh-trex-tenant
+  name: brontosaurus-on-pull-request
+  namespace: brontosaurus-tenant
 spec:
   params:
   - name: dockerfile
@@ -26,7 +26,7 @@ spec:
   - name: image-expires-after
     value: 5d
   - name: output-image
-    value: quay.io/redhat-user-workloads/rh-trex-tenant/rh-trex/rh-trex:on-pr-{{revision}}
+    value: quay.io/redhat-user-workloads/brontosaurus-tenant/brontosaurus/brontosaurus:on-pr-{{revision}}
   - name: path-context
     value: .
   - name: revision

@@ -4,11 +4,11 @@ import (
 	"context"
 	"testing"
 
+	"github.com/eemurphy/brontosaurus/pkg/api"
+	"github.com/eemurphy/brontosaurus/pkg/dao/mocks"
+	dbmocks "github.com/eemurphy/brontosaurus/pkg/db/mocks"
+	"github.com/eemurphy/brontosaurus/pkg/services"
 	. "github.com/onsi/gomega"
-	"github.com/openshift-online/rh-trex/pkg/api"
-	"github.com/openshift-online/rh-trex/pkg/dao/mocks"
-	dbmocks "github.com/openshift-online/rh-trex/pkg/db/mocks"
-	"github.com/openshift-online/rh-trex/pkg/services"
 )
 
 func newExampleControllerConfig(ctrl *exampleController) *ControllerConfig {

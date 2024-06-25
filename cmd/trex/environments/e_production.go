@@ -1,7 +1,7 @@
 package environments
 
 import (
-	"github.com/openshift-online/rh-trex/pkg/db/db_session"
+	"github.com/eemurphy/brontosaurus/pkg/db/db_session"
 )
 
 var _ EnvironmentImpl = &productionEnvImpl{}

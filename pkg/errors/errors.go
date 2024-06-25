@@ -7,18 +7,18 @@ import (
 
 	"github.com/golang/glog"
 
-	"github.com/openshift-online/rh-trex/pkg/api/openapi"
+	"github.com/eemurphy/brontosaurus/pkg/api/openapi"
 )
 
 const (
 	// Prefix used for error code strings
 	// Example:
 	//   ERROR_CODE_PREFIX = "rh-text"
-	//   results in: rh-trex-1
-	ERROR_CODE_PREFIX = "rh-trex"
+	//   results in: brontosaurus-1
+	ERROR_CODE_PREFIX = "brontosaurus"
 
 	// HREF for API errors
-	ERROR_HREF = "/api/rh-trex/v1/errors/"
+	ERROR_HREF = "/api/brontosaurus/v1/errors/"
 
 	// InvalidToken occurs when a token is invalid (generally, not found in the database)
 	ErrorInvalidToken ServiceErrorCode = 1

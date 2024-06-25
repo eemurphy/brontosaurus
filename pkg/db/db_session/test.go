@@ -12,8 +12,8 @@ import (
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
 
-	"github.com/openshift-online/rh-trex/pkg/config"
-	"github.com/openshift-online/rh-trex/pkg/db"
+	"github.com/eemurphy/brontosaurus/pkg/config"
+	"github.com/eemurphy/brontosaurus/pkg/db"
 )
 
 type Test struct {

@@ -9,9 +9,9 @@ import (
 	"github.com/golang/glog"
 	"github.com/spf13/pflag"
 
-	"github.com/openshift-online/rh-trex/pkg/client/ocm"
-	"github.com/openshift-online/rh-trex/pkg/config"
-	"github.com/openshift-online/rh-trex/pkg/errors"
+	"github.com/eemurphy/brontosaurus/pkg/client/ocm"
+	"github.com/eemurphy/brontosaurus/pkg/config"
+	"github.com/eemurphy/brontosaurus/pkg/errors"
 )
 
 func init() {

@@ -4,12 +4,12 @@ import (
 	"context"
 	"flag"
 
+	"github.com/eemurphy/brontosaurus/pkg/db/db_session"
 	"github.com/golang/glog"
-	"github.com/openshift-online/rh-trex/pkg/db/db_session"
 	"github.com/spf13/cobra"
 
-	"github.com/openshift-online/rh-trex/pkg/config"
-	"github.com/openshift-online/rh-trex/pkg/db"
+	"github.com/eemurphy/brontosaurus/pkg/config"
+	"github.com/eemurphy/brontosaurus/pkg/db"
 )
 
 var dbConfig = config.NewDatabaseConfig()
@@ -18,8 +18,8 @@ var dbConfig = config.NewDatabaseConfig()
 func NewMigrateCommand() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "migrate",
-		Short: "Run rh-trex service data migrations",
-		Long:  "Run rh-trex service data migrations",
+		Short: "Run brontosaurus service data migrations",
+		Long:  "Run brontosaurus service data migrations",
 		Run:   runMigrate,
 	}
 

@@ -6,13 +6,13 @@ import (
 	"testing"
 	"time"
 
+	"github.com/eemurphy/brontosaurus/cmd/trex/server"
+	"github.com/eemurphy/brontosaurus/pkg/api"
+	"github.com/eemurphy/brontosaurus/pkg/controllers"
+	"github.com/eemurphy/brontosaurus/pkg/dao"
+	"github.com/eemurphy/brontosaurus/pkg/db"
+	"github.com/eemurphy/brontosaurus/test"
 	. "github.com/onsi/gomega"
-	"github.com/openshift-online/rh-trex/cmd/trex/server"
-	"github.com/openshift-online/rh-trex/pkg/api"
-	"github.com/openshift-online/rh-trex/pkg/controllers"
-	"github.com/openshift-online/rh-trex/pkg/dao"
-	"github.com/openshift-online/rh-trex/pkg/db"
-	"github.com/openshift-online/rh-trex/test"
 )
 
 func TestControllerRacing(t *testing.T) {

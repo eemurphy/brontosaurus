@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/openshift-online/rh-trex/pkg/errors"
+	"github.com/eemurphy/brontosaurus/pkg/errors"
 )
 
 type ProjectionList struct {

@@ -3,10 +3,10 @@ package environments
 import (
 	"sync"
 
-	"github.com/openshift-online/rh-trex/pkg/auth"
-	"github.com/openshift-online/rh-trex/pkg/client/ocm"
-	"github.com/openshift-online/rh-trex/pkg/config"
-	"github.com/openshift-online/rh-trex/pkg/db"
+	"github.com/eemurphy/brontosaurus/pkg/auth"
+	"github.com/eemurphy/brontosaurus/pkg/client/ocm"
+	"github.com/eemurphy/brontosaurus/pkg/config"
+	"github.com/eemurphy/brontosaurus/pkg/db"
 )
 
 const (

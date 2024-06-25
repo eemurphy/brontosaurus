@@ -1,9 +1,9 @@
 package presenters
 
 import (
-	"github.com/openshift-online/rh-trex/pkg/api"
-	"github.com/openshift-online/rh-trex/pkg/api/openapi"
-	"github.com/openshift-online/rh-trex/pkg/util"
+	"github.com/eemurphy/brontosaurus/pkg/api"
+	"github.com/eemurphy/brontosaurus/pkg/api/openapi"
+	"github.com/eemurphy/brontosaurus/pkg/util"
 )
 
 func ConvertDinosaur(dinosaur openapi.Dinosaur) *api.Dinosaur {

@@ -5,7 +5,7 @@ package db_context
 import (
 	"context"
 
-	"github.com/openshift-online/rh-trex/pkg/db/transaction"
+	"github.com/eemurphy/brontosaurus/pkg/db/transaction"
 )
 
 type contextKey int

@@ -3,12 +3,12 @@ package services
 import (
 	"context"
 
-	"github.com/openshift-online/rh-trex/pkg/dao"
-	"github.com/openshift-online/rh-trex/pkg/db"
-	logger "github.com/openshift-online/rh-trex/pkg/logger"
+	"github.com/eemurphy/brontosaurus/pkg/dao"
+	"github.com/eemurphy/brontosaurus/pkg/db"
+	logger "github.com/eemurphy/brontosaurus/pkg/logger"
 
-	"github.com/openshift-online/rh-trex/pkg/api"
-	"github.com/openshift-online/rh-trex/pkg/errors"
+	"github.com/eemurphy/brontosaurus/pkg/api"
+	"github.com/eemurphy/brontosaurus/pkg/errors"
 )
 
 // This flag will only be used in integration test to prove that the advisory lock works

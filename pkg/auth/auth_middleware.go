@@ -6,7 +6,7 @@ import (
 
 	"github.com/getsentry/sentry-go"
 
-	"github.com/openshift-online/rh-trex/pkg/errors"
+	"github.com/eemurphy/brontosaurus/pkg/errors"
 )
 
 type JWTMiddleware interface {

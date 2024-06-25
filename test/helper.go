@@ -13,7 +13,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/openshift-online/rh-trex/pkg/logger"
+	"github.com/eemurphy/brontosaurus/pkg/logger"
 
 	"github.com/bxcodec/faker/v3"
 	"github.com/golang-jwt/jwt/v4"
@@ -24,14 +24,14 @@ import (
 
 	amv1 "github.com/openshift-online/ocm-sdk-go/accountsmgmt/v1"
 
-	"github.com/openshift-online/rh-trex/cmd/trex/environments"
-	"github.com/openshift-online/rh-trex/cmd/trex/server"
-	"github.com/openshift-online/rh-trex/pkg/api"
-	"github.com/openshift-online/rh-trex/pkg/api/openapi"
-	"github.com/openshift-online/rh-trex/pkg/config"
-	"github.com/openshift-online/rh-trex/pkg/db"
-	"github.com/openshift-online/rh-trex/test/factories"
-	"github.com/openshift-online/rh-trex/test/mocks"
+	"github.com/eemurphy/brontosaurus/cmd/trex/environments"
+	"github.com/eemurphy/brontosaurus/cmd/trex/server"
+	"github.com/eemurphy/brontosaurus/pkg/api"
+	"github.com/eemurphy/brontosaurus/pkg/api/openapi"
+	"github.com/eemurphy/brontosaurus/pkg/config"
+	"github.com/eemurphy/brontosaurus/pkg/db"
+	"github.com/eemurphy/brontosaurus/test/factories"
+	"github.com/eemurphy/brontosaurus/test/mocks"
 )
 
 const (
@@ -223,7 +223,7 @@ func (helper *Helper) RestURL(path string) string {
 	if helper.AppConfig.Server.EnableHTTPS {
 		protocol = "https"
 	}
-	return fmt.Sprintf("%s://%s/api/rh-trex/v1%s", protocol, helper.AppConfig.Server.BindAddress, path)
+	return fmt.Sprintf("%s://%s/api/brontosaurus/v1%s", protocol, helper.AppConfig.Server.BindAddress, path)
 }
 
 func (helper *Helper) MetricsURL(path string) string {

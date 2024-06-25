@@ -5,7 +5,7 @@ import (
 
 	gm "github.com/onsi/gomega"
 
-	"github.com/openshift-online/rh-trex/pkg/api/openapi"
+	"github.com/eemurphy/brontosaurus/pkg/api/openapi"
 )
 
 // Register a test

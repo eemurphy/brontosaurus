@@ -6,8 +6,8 @@ import (
 
 	"gorm.io/gorm/clause"
 
-	"github.com/openshift-online/rh-trex/pkg/api"
-	"github.com/openshift-online/rh-trex/pkg/db"
+	"github.com/eemurphy/brontosaurus/pkg/api"
+	"github.com/eemurphy/brontosaurus/pkg/db"
 )
 
 type EventDao interface {

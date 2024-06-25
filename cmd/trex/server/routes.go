@@ -6,12 +6,12 @@ import (
 	gorillahandlers "github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
 
-	"github.com/openshift-online/rh-trex/cmd/trex/server/logging"
-	"github.com/openshift-online/rh-trex/pkg/api"
-	"github.com/openshift-online/rh-trex/pkg/auth"
-	"github.com/openshift-online/rh-trex/pkg/db"
-	"github.com/openshift-online/rh-trex/pkg/handlers"
-	"github.com/openshift-online/rh-trex/pkg/logger"
+	"github.com/eemurphy/brontosaurus/cmd/trex/server/logging"
+	"github.com/eemurphy/brontosaurus/pkg/api"
+	"github.com/eemurphy/brontosaurus/pkg/auth"
+	"github.com/eemurphy/brontosaurus/pkg/db"
+	"github.com/eemurphy/brontosaurus/pkg/handlers"
+	"github.com/eemurphy/brontosaurus/pkg/logger"
 )
 
 func (s *apiServer) routes() *mux.Router {
@@ -52,25 +52,25 @@ func (s *apiServer) routes() *mux.Router {
 	// Request logging middleware logs pertinent information about the request and response
 	mainRouter.Use(logging.RequestLoggingMiddleware)
 
-	//  /api/rh-trex
-	apiRouter := mainRouter.PathPrefix("/api/rh-trex").Subrouter()
+	//  /api/brontosaurus
+	apiRouter := mainRouter.PathPrefix("/api/brontosaurus").Subrouter()
 	apiRouter.HandleFunc("", api.SendAPI).Methods(http.MethodGet)
 
-	//  /api/rh-trex/v1
+	//  /api/brontosaurus/v1
 	apiV1Router := apiRouter.PathPrefix("/v1").Subrouter()
 	apiV1Router.HandleFunc("", api.SendAPIV1).Methods(http.MethodGet)
 	apiV1Router.HandleFunc("/", api.SendAPIV1).Methods(http.MethodGet)
 
-	//  /api/rh-trex/v1/openapi
+	//  /api/brontosaurus/v1/openapi
 	apiV1Router.HandleFunc("/openapi", handlers.NewOpenAPIHandler(openAPIDefinitions).Get).Methods(http.MethodGet)
 	registerApiMiddleware(apiV1Router)
 
-	//  /api/rh-trex/v1/errors
+	//  /api/brontosaurus/v1/errors
 	apiV1ErrorsRouter := apiV1Router.PathPrefix("/errors").Subrouter()
 	apiV1ErrorsRouter.HandleFunc("", errorsHandler.List).Methods(http.MethodGet)
 	apiV1ErrorsRouter.HandleFunc("/{id}", errorsHandler.Get).Methods(http.MethodGet)
 
-	//  /api/rh-trex/v1/dinosaurs
+	//  /api/brontosaurus/v1/dinosaurs
 	apiV1DinosaursRouter := apiV1Router.PathPrefix("/dinosaurs").Subrouter()
 	apiV1DinosaursRouter.HandleFunc("", dinosaurHandler.List).Methods(http.MethodGet)
 	apiV1DinosaursRouter.HandleFunc("/{id}", dinosaurHandler.Get).Methods(http.MethodGet)
