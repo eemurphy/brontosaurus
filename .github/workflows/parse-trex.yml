@@ -12,52 +12,41 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
+      with:
+        ref: test123
 
     - name: Find T-Rex files
       id: find_files
       run: |
-        # Find all files with 'trex' in their name
-        filename_matches=$(find . -type f -name '*trex*')
+        # Find all files with 'trex' in their name, ignoring files that start with '.'
+        filename_matches=$(find . -type f -name '*trex*' ! -path './.*')
 
-        # Find all files with 'trex' in their content
-        content_matches=$(grep -rl 'trex')
+        # Find all files with 'trex' in their content, ignoring files that start with '.'
+        content_matches=$(grep -rl 'trex' --exclude-dir='.*')
 
         # Combine both results into a single list, removing duplicates
-        combined_results=$(echo -e "$filename_matches\n$content_matches" | sort -u)
+        combined_results=$(echo -e "$filename_matches\n$content_matches" | sort -u | grep -v '^./\.')
 
-        # Save the combined results to a file
-        echo "$combined_results" > trex_files.txt
+        # Format the combined results into a JSON-like array
+        formatted_results=$(echo "$combined_results" | awk '{print "{" $0 "}"}' | paste -sd, -)
+
+        # Wrap the formatted results in square brackets
+        echo "[$formatted_results]" > trex_files.txt
 
         # Print the result to the log
         echo "Files found:"
         cat trex_files.txt
-
-    - name: Create a new branch
-      id: create_branch
-      run: |
-        # Generate a unique branch name
-        BRANCH_NAME="trex-files-update-$(date +%s)"
         
-        # Create a new branch and switch to it
-        git checkout -b "$BRANCH_NAME"
-        echo "Branch created: $BRANCH_NAME"
-        
-        # Save the branch name as an output variable
-        echo "branch_name=$BRANCH_NAME" >> $GITHUB_ENV
-
-    - name: Commit and push changes
-      run: |
-        git config --global user.name "github-actions"
-        git config --global user.email "github-actions@github.com"
-        git add trex_files.txt
-        git commit -m "Add list of T-Rex files and contents"
-        git push origin ${{ env.branch_name }}
-
     - name: Create Pull Request
-      uses: octokit/create-pull-request@v2
+      uses: peter-evans/create-pull-request@v3
       with:
-        title: "Add list of T-Rex files and contents"
-        body: "This pull request adds a list of files with 'trex' in their name or content."
-        base: test123
-        head: ${{ env.branch_name }}
-        token: ${{ secrets.GITHUB_TOKEN }}
+        signoff: true
+        branch: "trex-file-parser"
+        delete-branch: true
+        title: "Trex File Parser"
+        committer: GitHub <noreply@github.com>
+        author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+        labels: |
+          do-not-merge/hold
+          ok-to-test
+        reviewers: eemurphy
