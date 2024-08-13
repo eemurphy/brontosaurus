@@ -7,8 +7,8 @@ import (
 	"hash/fnv"
 	"time"
 
-	"github.com/eemurphy/brontosaurus/pkg/logger"
 	"github.com/google/uuid"
+	"github.com/openshift-online/rh-trex/pkg/logger"
 	"gorm.io/gorm"
 )
 

@@ -6,8 +6,8 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/eemurphy/brontosaurus/pkg/errors"
-	"github.com/eemurphy/brontosaurus/pkg/logger"
+	"github.com/openshift-online/rh-trex/pkg/errors"
+	"github.com/openshift-online/rh-trex/pkg/logger"
 )
 
 // handlerConfig defines the common things each REST controller must do.

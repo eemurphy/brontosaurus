@@ -8,9 +8,9 @@ import (
 
 	"github.com/gorilla/mux"
 
-	"github.com/eemurphy/brontosaurus/pkg/api"
-	"github.com/eemurphy/brontosaurus/pkg/handlers"
-	"github.com/eemurphy/brontosaurus/pkg/logger"
+	"github.com/openshift-online/rh-trex/pkg/api"
+	"github.com/openshift-online/rh-trex/pkg/handlers"
+	"github.com/openshift-online/rh-trex/pkg/logger"
 )
 
 func NewMetricsServer() Server {

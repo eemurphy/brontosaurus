@@ -3,14 +3,13 @@ package clone
 import (
 	"flag"
 	"fmt"
+	"github.com/golang/glog"
+	"github.com/openshift-online/rh-trex/pkg/config"
+	"github.com/spf13/cobra"
+	"github.com/spf13/pflag"
 	"os"
 	"path/filepath"
 	"strings"
-
-	"github.com/eemurphy/brontosaurus/pkg/config"
-	"github.com/golang/glog"
-	"github.com/spf13/cobra"
-	"github.com/spf13/pflag"
 )
 
 type provisionCfgFlags struct {
@@ -86,9 +85,9 @@ func clone(_ *cobra.Command, _ []string) {
 				content = strings.Replace(content, "RHTrex", provisionCfg.Name, -1)
 			}
 
-			if strings.Contains(content, "brontosaurus") {
+			if strings.Contains(content, "rh-trex") {
 				glog.Infof("find/replace required for file: %s", path)
-				content = strings.Replace(content, "brontosaurus", strings.ToLower(provisionCfg.Name), -1)
+				content = strings.Replace(content, "rh-trex", strings.ToLower(provisionCfg.Name), -1)
 			}
 
 			if strings.Contains(content, "rhtrex") {

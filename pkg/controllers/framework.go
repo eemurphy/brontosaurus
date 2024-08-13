@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/eemurphy/brontosaurus/pkg/api"
-	"github.com/eemurphy/brontosaurus/pkg/db"
-	"github.com/eemurphy/brontosaurus/pkg/logger"
-	"github.com/eemurphy/brontosaurus/pkg/services"
+	"github.com/openshift-online/rh-trex/pkg/api"
+	"github.com/openshift-online/rh-trex/pkg/db"
+	"github.com/openshift-online/rh-trex/pkg/logger"
+	"github.com/openshift-online/rh-trex/pkg/services"
 )
 
 /*
@@ -92,7 +92,7 @@ func (km *KindControllerManager) Handle(id string) {
 		return
 	}
 	threadContext := context.WithValue(ctx, "event", id)
-
+	
 	km.handle(threadContext, id)
 }
 

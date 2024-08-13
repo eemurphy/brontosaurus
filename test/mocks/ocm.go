@@ -3,7 +3,7 @@ package mocks
 import (
 	"context"
 
-	"github.com/eemurphy/brontosaurus/pkg/client/ocm"
+	"github.com/openshift-online/rh-trex/pkg/client/ocm"
 )
 
 /*

@@ -1,4 +1,4 @@
-module github.com/eemurphy/brontosaurus
+module github.com/openshift-online/rh-trex
 
 go 1.21
 

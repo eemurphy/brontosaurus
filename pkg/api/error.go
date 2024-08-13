@@ -6,9 +6,9 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/eemurphy/brontosaurus/pkg/errors"
 	"github.com/getsentry/sentry-go"
 	"github.com/golang/glog"
+	"github.com/openshift-online/rh-trex/pkg/errors"
 )
 
 // SendNotFound sends a 404 response with some details about the non existing resource.
@@ -25,8 +25,8 @@ func SendNotFound(w http.ResponseWriter, r *http.Request) {
 	body := Error{
 		Type:   ErrorType,
 		ID:     id,
-		HREF:   "/api/brontosaurus/v1/errors/" + id,
-		Code:   "brontosaurus-" + id,
+		HREF:   "/api/rh-trex/v1/errors/" + id,
+		Code:   "rh-trex-" + id,
 		Reason: reason,
 	}
 	data, err := json.Marshal(body)
@@ -96,8 +96,8 @@ func init() {
 	panicError := Error{
 		Type: ErrorType,
 		ID:   panicID,
-		HREF: "/api/brontosaurus/v1/" + panicID,
-		Code: "brontosaurus-" + panicID,
+		HREF: "/api/rh-trex/v1/" + panicID,
+		Code: "rh-trex-" + panicID,
 		Reason: "An unexpected error happened, please check the log of the service " +
 			"for details",
 	}

@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/eemurphy/brontosaurus/pkg/db"
 	"github.com/google/uuid"
+	"github.com/openshift-online/rh-trex/pkg/db"
 )
 
 type MockAdvisoryLockFactory struct {

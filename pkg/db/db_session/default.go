@@ -12,9 +12,9 @@ import (
 
 	"github.com/lib/pq"
 
-	"github.com/eemurphy/brontosaurus/pkg/config"
-	"github.com/eemurphy/brontosaurus/pkg/db"
-	ocmlogger "github.com/eemurphy/brontosaurus/pkg/logger"
+	"github.com/openshift-online/rh-trex/pkg/config"
+	"github.com/openshift-online/rh-trex/pkg/db"
+	ocmlogger "github.com/openshift-online/rh-trex/pkg/logger"
 )
 
 type Default struct {

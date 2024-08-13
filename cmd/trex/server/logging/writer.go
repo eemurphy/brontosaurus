@@ -3,7 +3,7 @@ package logging
 import (
 	"net/http"
 
-	"github.com/eemurphy/brontosaurus/pkg/logger"
+	"github.com/openshift-online/rh-trex/pkg/logger"
 )
 
 func NewLoggingWriter(w http.ResponseWriter, r *http.Request, f LogFormatter) *loggingWriter {

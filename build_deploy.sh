@@ -52,5 +52,5 @@ podman login -u "${QUAY_USER}" -p "${QUAY_TOKEN}" quay.io
 make \
   version="${VERSION}" \
   external_image_registry="quay.io" \
-  image_repository="rh_ee_erinmurp/brontosaurus" \
+  image_repository="stolostron/rh-trex" \
   push

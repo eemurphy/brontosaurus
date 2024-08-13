@@ -3,9 +3,9 @@ package db
 import (
 	"context"
 
-	"github.com/eemurphy/brontosaurus/pkg/db/migrations"
 	"github.com/go-gormigrate/gormigrate/v2"
 	"github.com/golang/glog"
+	"github.com/openshift-online/rh-trex/pkg/db/migrations"
 
 	"gorm.io/gorm"
 )

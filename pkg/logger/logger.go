@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/eemurphy/brontosaurus/pkg/util"
 	"github.com/getsentry/sentry-go"
 	"github.com/golang/glog"
+	"github.com/openshift-online/rh-trex/pkg/util"
 )
 
 type OCMLogger interface {

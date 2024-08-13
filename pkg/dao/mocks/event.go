@@ -5,9 +5,9 @@ import (
 
 	"gorm.io/gorm"
 
-	"github.com/eemurphy/brontosaurus/pkg/api"
-	"github.com/eemurphy/brontosaurus/pkg/dao"
-	"github.com/eemurphy/brontosaurus/pkg/errors"
+	"github.com/openshift-online/rh-trex/pkg/api"
+	"github.com/openshift-online/rh-trex/pkg/dao"
+	"github.com/openshift-online/rh-trex/pkg/errors"
 )
 
 var _ dao.EventDao = &eventDaoMock{}

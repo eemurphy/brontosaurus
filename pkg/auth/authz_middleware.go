@@ -13,7 +13,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/eemurphy/brontosaurus/pkg/client/ocm"
+	"github.com/openshift-online/rh-trex/pkg/client/ocm"
 )
 
 type AuthorizationMiddleware interface {

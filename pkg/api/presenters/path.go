@@ -3,14 +3,14 @@ package presenters
 import (
 	"fmt"
 
-	"github.com/eemurphy/brontosaurus/pkg/api/openapi"
+	"github.com/openshift-online/rh-trex/pkg/api/openapi"
 
-	"github.com/eemurphy/brontosaurus/pkg/api"
-	"github.com/eemurphy/brontosaurus/pkg/errors"
+	"github.com/openshift-online/rh-trex/pkg/api"
+	"github.com/openshift-online/rh-trex/pkg/errors"
 )
 
 const (
-	BasePath = "/api/brontosaurus/v1"
+	BasePath = "/api/rh-trex/v1"
 )
 
 func ObjectPath(id string, obj interface{}) *string {

@@ -1,9 +1,9 @@
 package environments
 
 import (
-	"github.com/eemurphy/brontosaurus/pkg/dao"
-	"github.com/eemurphy/brontosaurus/pkg/db"
-	"github.com/eemurphy/brontosaurus/pkg/services"
+	"github.com/openshift-online/rh-trex/pkg/dao"
+	"github.com/openshift-online/rh-trex/pkg/db"
+	"github.com/openshift-online/rh-trex/pkg/services"
 )
 
 type DinosaurServiceLocator func() services.DinosaurService

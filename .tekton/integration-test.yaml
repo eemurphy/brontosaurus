@@ -1,7 +1,7 @@
 kind: Pipeline
 apiVersion: tekton.dev/v1beta1
 metadata:
-  name: brontosaurus-integration-test
+  name: rh-trex-integration-test
 spec:
   params:
     - description: 'Snapshot of the application'
@@ -53,9 +53,9 @@ spec:
             go install gotest.tools/gotestsum@latest  
 
             # Set Vars
-            TARGET_COMPONENT_NAME="brontosaurus"
-            REPO_URL=$(echo $SNAPSHOT | jq -r '.components[] | select(.name == "brontosaurus").source.git.url')
-            REPO_COMMIT=$(echo $SNAPSHOT | jq -r '.components[] | select(.name == "brontosaurus").source.git.revision')
+            TARGET_COMPONENT_NAME="rh-trex"
+            REPO_URL=$(echo $SNAPSHOT | jq -r '.components[] | select(.name == "rh-trex").source.git.url')
+            REPO_COMMIT=$(echo $SNAPSHOT | jq -r '.components[] | select(.name == "rh-trex").source.git.revision')
             test_output_file=${PWD}/test_output.json
 
             # Log Vars for Tracibility

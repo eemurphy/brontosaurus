@@ -5,11 +5,11 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/eemurphy/brontosaurus/pkg/db/db_context"
 	"github.com/getsentry/sentry-go"
+	"github.com/openshift-online/rh-trex/pkg/db/db_context"
 
-	"github.com/eemurphy/brontosaurus/pkg/errors"
-	"github.com/eemurphy/brontosaurus/pkg/logger"
+	"github.com/openshift-online/rh-trex/pkg/errors"
+	"github.com/openshift-online/rh-trex/pkg/logger"
 )
 
 // TransactionMiddleware creates a new HTTP middleware that begins a database transaction

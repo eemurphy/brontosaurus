@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/eemurphy/brontosaurus/cmd/trex/environments"
-	"github.com/eemurphy/brontosaurus/pkg/api"
+	"github.com/openshift-online/rh-trex/cmd/trex/environments"
+	"github.com/openshift-online/rh-trex/pkg/api"
 )
 
 func (f *Factories) NewDinosaur(species string) (*api.Dinosaur, error) {

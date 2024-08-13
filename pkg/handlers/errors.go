@@ -4,11 +4,11 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/eemurphy/brontosaurus/pkg/api/openapi"
-	"github.com/eemurphy/brontosaurus/pkg/api/presenters"
-	"github.com/eemurphy/brontosaurus/pkg/errors"
-	"github.com/eemurphy/brontosaurus/pkg/services"
 	"github.com/gorilla/mux"
+	"github.com/openshift-online/rh-trex/pkg/api/openapi"
+	"github.com/openshift-online/rh-trex/pkg/api/presenters"
+	"github.com/openshift-online/rh-trex/pkg/errors"
+	"github.com/openshift-online/rh-trex/pkg/services"
 )
 
 func NewErrorsHandler() *errorHandler {

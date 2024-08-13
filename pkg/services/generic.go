@@ -14,11 +14,11 @@ import (
 	"github.com/yaacov/tree-search-language/pkg/walkers/ident"
 	sqlFilter "github.com/yaacov/tree-search-language/pkg/walkers/sql"
 
-	"github.com/eemurphy/brontosaurus/pkg/api"
-	"github.com/eemurphy/brontosaurus/pkg/dao"
-	"github.com/eemurphy/brontosaurus/pkg/db"
-	"github.com/eemurphy/brontosaurus/pkg/errors"
-	"github.com/eemurphy/brontosaurus/pkg/logger"
+	"github.com/openshift-online/rh-trex/pkg/api"
+	"github.com/openshift-online/rh-trex/pkg/dao"
+	"github.com/openshift-online/rh-trex/pkg/db"
+	"github.com/openshift-online/rh-trex/pkg/errors"
+	"github.com/openshift-online/rh-trex/pkg/logger"
 )
 
 type GenericService interface {

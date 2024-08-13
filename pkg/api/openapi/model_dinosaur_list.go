@@ -1,7 +1,7 @@
 /*
-brontosaurus API
+rh-trex API
 
-brontosaurus API
+rh-trex API
 
 API version: 0.0.1
 */

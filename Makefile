@@ -38,7 +38,7 @@ internal_image_registry:=image-registry.openshift-image-registry.svc:5000
 # corresponding image stream inside that namespace. If the namespace doesn't
 # exist the push fails. This doesn't apply when the image is pushed to a public
 # repository, like `docker.io` or `quay.io`.
-image_repository:=$(namespace)/brontosaurus
+image_repository:=$(namespace)/rh-trex
 
 # Database connection details
 db_name:=rhtrex
@@ -238,7 +238,7 @@ run: install
 # Run Swagger and host the api docs
 run/docs:
 	@echo "Please open http://localhost/"
-	docker run -d -p 80:8080 -e SWAGGER_JSON=/trex.yaml -v $(PWD)/openapi/brontosaurus.yaml:/trex.yaml swaggerapi/swagger-ui
+	docker run -d -p 80:8080 -e SWAGGER_JSON=/trex.yaml -v $(PWD)/openapi/rh-trex.yaml:/trex.yaml swaggerapi/swagger-ui
 .PHONY: run/docs
 
 # Delete temporary files

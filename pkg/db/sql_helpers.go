@@ -5,8 +5,8 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/eemurphy/brontosaurus/pkg/errors"
 	"github.com/jinzhu/inflection"
+	"github.com/openshift-online/rh-trex/pkg/errors"
 	"github.com/yaacov/tree-search-language/pkg/tsl"
 	"gorm.io/gorm"
 )
