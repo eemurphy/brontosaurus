@@ -1,5 +1,6 @@
 - "./rhtap-trex.png"
 - "./rhtap-trex_sm.png"
+- "./trex_files.yaml"
 - ".gitignore"
 - "Containerfile.rhtap"
 - "Dockerfile"
@@ -119,3 +120,4 @@
 - "test/integration/integration_test.go"
 - "test/mocks/ocm.go"
 - "test/registration.go"
+- "trex_files.yaml"
