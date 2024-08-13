@@ -27,15 +27,15 @@ jobs:
         # Combine both results into a single list, removing duplicates
         combined_results=$(echo -e "$filename_matches\n$content_matches" | sort -u | grep -v '^./\.')
 
-        # Format the combined results into a JSON-like array
-        formatted_results=$(echo "$combined_results" | awk '{print "{" $0 "}"}' | paste -sd, -)
+        # Format the combined results into a YAML array
+        formatted_results=$(echo "$combined_results" | awk '{print "- \"" $0 "\""}')
 
-        # Wrap the formatted results in square brackets
-        echo "[$formatted_results]" > trex_files.txt
+        # Write the YAML array to a file
+        echo -e "$formatted_results" > trex_files.yaml
 
         # Print the result to the log
         echo "Files found:"
-        cat trex_files.txt
+        cat trex_files.yaml
         
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v3
